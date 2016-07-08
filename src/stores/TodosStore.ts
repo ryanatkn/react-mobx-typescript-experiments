@@ -24,16 +24,12 @@ export default class TodoStore {
 
   @computed
   get completedTodos(): TodoModel[] {
-    return this.todos.filter((todo: TodoModel): boolean => {
-      return todo.isComplete;
-    });
+    return this.todos.filter((todo: TodoModel): boolean => todo.isComplete);
   }
 
   @computed
   get pendingTodos(): TodoModel[] {
-    return this.todos.filter((todo: TodoModel): boolean => {
-      return !todo.isComplete;
-    });
+    return this.todos.filter((todo: TodoModel): boolean => !todo.isComplete);
   }
 
   // An example of a second-order computed property.
