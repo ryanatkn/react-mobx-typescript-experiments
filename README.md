@@ -2,6 +2,8 @@
 
 Experiments with Mobx in a React application written with TypeScript.
 
+[https://ryanatkn.github.io/react-mobx-typescript-experiments](https://ryanatkn.github.io/react-mobx-typescript-experiments)
+
 ## Motivation
 After having used the excellent Redux library extensively with React,
 I wanted to explore the approach offered by Mobx.
@@ -21,7 +23,7 @@ This is similar to the strategy used by Vue.
 - Writing mutating operations is easier and less error-prone than transforming immutable data,
   and it's fully type safe, unlike Immutable.js.
 - Composing computed properties feels natural and keeps everything nicely co-located.
-  See `src/stores/TodosStore` for an example.
+  See [`src/stores/TodosStore`](https://github.com/ryanatkn/react-mobx-typescript-experiments/blob/gh-pages/src/stores/TodosStore.ts) for an example.
 - I chose to make all data transformations explicit by enabling `mobx.useStrict(true)`,
   which requires that all observable-mutating operations be performed in an `@action`.
   This could be seen as additional boilerplate,
@@ -30,7 +32,7 @@ This is similar to the strategy used by Vue.
   that Redux, Flux, and other event sourcing strategies offer.
 - I found myself wanting type safety in the store selectors
   instead of `@observer(['storeNameString'])`.
-  This would be easy to implement in a fork of `mobx-react`. 
+  This would be easy to implement in a fork of mobx-react.
 
 ## Develop
 
