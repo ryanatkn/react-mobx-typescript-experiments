@@ -1,0 +1,46 @@
+@import './_vars';
+
+/**
+ * The contents of `./main` should all be imported here and only here,
+ * otherwise they will be duplicated at each import site.
+ */
+@import './main/_animations';
+@import './main/_buttons';
+@import './main/_type';
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  color: $text-color;
+  background-color: $bg-color;
+  font-size: $font-size-base;
+  font-family: sans-serif;
+}
+
+p {
+  margin-top: 0;
+}
+
+// #app-wrapper {}
+
+.page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding-top: $spacing-base;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: $spacing-base;
+}

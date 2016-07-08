@@ -1,0 +1,11 @@
+@keyframes hanging-fade-out {
+  0% {
+    opacity: 1.0;
+  }
+  33% {
+    opacity: 1.0;
+  }
+  100% {
+    opacity: 0;
+  }
+}

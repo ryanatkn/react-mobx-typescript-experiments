@@ -1,0 +1,6 @@
+{
+  "extends": ["tslint-config-strictish"],
+  "rules": {
+    "member-access": false
+  }
+}

@@ -1,0 +1,11 @@
+@define-mixin clickable-bg $bg-color-1, $bg-color-2 {
+  background-color: $bg-color-1;
+
+  &:hover {
+    background-color: color($bg-color-1 blend($bg-color-2 15%));
+  }
+
+  &:active {
+    background-color: color($bg-color-1 blend($bg-color-2 30%));
+  }
+}

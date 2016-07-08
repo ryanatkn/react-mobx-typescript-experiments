@@ -1,0 +1,42 @@
+@import '../../styles/_vars';
+
+.app-header {
+  text-align: center;
+  background-color: $primary-color;
+
+  a {
+    h1 {
+      color: $primary-color-text;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      height: calc($nav-height * $golden-mean);
+      text-shadow: 1px 1px 0 $primary-color-darker;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &.active {
+      h1 {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.app-header-nav {
+  min-height: $nav-height;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.app-header-nav-link {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

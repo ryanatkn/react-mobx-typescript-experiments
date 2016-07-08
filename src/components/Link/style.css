@@ -1,0 +1,19 @@
+@import '../../styles/_vars';
+
+a {
+  color: $primary-color-darker;
+
+  &:visited {
+    color: $accent-color-darker;
+  }
+  
+  /* convention is <Link activeClassName="active"/> */
+  &.active {
+    cursor: default;
+  }
+}
+
+.link-unstyled {
+  text-decoration: none;
+  outline: none;
+}

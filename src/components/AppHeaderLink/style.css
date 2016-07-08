@@ -1,0 +1,28 @@
+@import '../../styles/_vars';
+@import '../../styles/_mixins';
+
+.app-header-link {
+  flex-grow: 1;
+  flex-basis: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: $nav-height;
+  color: $text-color;
+  padding: $spacing-xs $spacing-sm;
+  color: $primary-color-text;
+  text-shadow: 1px 1px 2px $primary-color-darker;
+  border-radius: 3px 3px 0 0;
+
+  @mixin clickable-bg $primary-color, $bg-color;
+
+  &:visited {
+    color: $primary-color-text;
+  }
+
+  &.active {
+    background-color: $bg-color;
+    color: $text-color;
+    text-shadow: none;
+  }
+}

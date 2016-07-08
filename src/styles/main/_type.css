@@ -1,0 +1,22 @@
+@import '../_vars';
+
+.text-block {
+  max-width: 500px;
+  margin: $spacing-lg auto 0;
+  padding: 0 $spacing-base;
+}
+
+h1 {
+  font-size: $font-size-h1;
+  font-weight: 300;
+}
+
+h2 {
+  font-size: $font-size-h2;
+  font-weight: 300;
+}
+
+h3 {
+  font-size: $font-size-h3;
+  font-weight: 300;
+}

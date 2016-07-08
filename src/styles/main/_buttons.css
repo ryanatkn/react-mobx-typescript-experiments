@@ -1,0 +1,28 @@
+@import '../_vars';
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $button-height;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 3px;
+  padding: 0 $spacing-base;
+  font-size: $font-size-sm;
+  border-right: 2px solid #aaa;
+  border-bottom: 2px solid #aaa;
+  border-top: 1px solid #bbb;
+  border-left: 2px solid #aaa;
+
+  &:active {
+    border-right: 2px solid #aaa;
+    border-bottom: 1px solid #bbb;
+    border-top: 2px solid #aaa;
+    border-left: 2px solid #aaa;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
