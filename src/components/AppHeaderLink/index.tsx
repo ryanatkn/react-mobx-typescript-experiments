@@ -9,7 +9,12 @@ function getPath(name: ExperimentName): string {
 }
 
 export function getExperimentNameTitle(name: ExperimentName): string {
-  return name.replace(/-/g, ' ').toLowerCase();
+  switch (name) {
+    case 'counter': return 'basic usage';
+    case 'simple-form': return 'computed properties';
+    case 'todos': return 'todo list';
+    default: return name.replace(/-/g, ' ').toLowerCase();
+  }
 }
 
 interface Props {
