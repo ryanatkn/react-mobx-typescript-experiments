@@ -5,6 +5,7 @@ import IndexPage from '../containers/IndexPage';
 import CounterPage from '../containers/CounterPage';
 import SimpleFormPage from '../containers/SimpleFormPage';
 import DynamicDependenciesPage from '../containers/DynamicDependenciesPage';
+import BatchedMutationsPage from '../containers/BatchedMutationsPage';
 import TodosPage from '../containers/TodosPage';
 import {experimentNames, ExperimentName} from '../types';
 
@@ -27,6 +28,7 @@ export function getExperimentPage(name: ExperimentName): React.ComponentClass<an
     case 'counter': return CounterPage;
     case 'simple-form': return SimpleFormPage;
     case 'dynamic-dependencies': return DynamicDependenciesPage;
+    case 'batched-mutations': return BatchedMutationsPage;
     case 'todos': return TodosPage;
     default: throw new Error(`Unknown experiment name "${name}"`);
   }

@@ -29,7 +29,7 @@ This is similar to the strategy used by Vue.
   This could be seen as additional boilerplate,
   because for example updating a simple property requires defining and calling an action function,
   but I like the explicit and trackable transformations
-  that Redux, Flux, and other event sourcing strategies offer.
+  that Redux, Flux, and other event sourcing patterns offer.
 - I found myself wanting type safety in the store selectors
   instead of `@observer(['storeNameString'])`.
   This would be easy to implement in a fork of mobx-react.

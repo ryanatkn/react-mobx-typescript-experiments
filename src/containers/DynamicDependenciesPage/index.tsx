@@ -27,6 +27,8 @@ export default class CounterPage extends React.Component<Props, {}> {
           Mobx dynamically updates a component's dependencies on each render.
           This component stops reading the counter for the 4th and 5th clicks,
           so the render count should not increment for them.
+          Not reading the counter simply means
+          not accessing it on the store during the render function.
           It resumes watching the counter starting with the 6th click.
           Clicking the counter 10 times should yield only 8 renders, but the click
           count should be 10.
@@ -36,15 +38,15 @@ export default class CounterPage extends React.Component<Props, {}> {
             render count: {this.renderCount}
           </div>
           <div>
-            <button onClick={this.doIncrement}>
-              increment
-            </button>
-          </div>
-          <div>
             {this.shouldReadCounter
               ? <span>click count: {dynamicDependenciesStore.counter}</span>
               : <em>[stopped reading counter]</em>
             }
+          </div>
+          <div>
+            <button onClick={this.doIncrement}>
+              increment
+            </button>
           </div>
         </div>
         <div className="form-group">
