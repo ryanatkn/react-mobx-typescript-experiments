@@ -19,8 +19,8 @@ export default class TodosPage extends React.Component<Props, {}> {
         <p>
           This experiment demonstrates a simple todo list.
           Some of the concepts introduced here include filtering arrays via computed properties,
-          composing models within a store, actions both on the store and models,
-          and second-order computed properties.
+          composing models within a store, performing actions both on the store and models,
+          and defining second-order computed properties.
         </p>
         <div>
           {todosStore.completedCount}/{todosStore.todos.length} complete
