@@ -1,12 +1,12 @@
 import * as React from 'react';
 import {Route, IndexRoute} from 'react-router';
-import App from '../containers/App';
-import IndexPage from '../containers/IndexPage';
-import CounterPage from '../containers/CounterPage';
-import ComputedPropertiesPage from '../containers/ComputedPropertiesPage';
-import DynamicDependenciesPage from '../containers/DynamicDependenciesPage';
-import BatchedMutationsPage from '../containers/BatchedMutationsPage';
-import TodosPage from '../containers/TodosPage';
+import App from '../pages/App';
+import IndexPage from '../pages/IndexPage';
+import CounterPage from '../pages/CounterPage';
+import ComputedPropertiesPage from '../pages/ComputedPropertiesPage';
+import DynamicDependenciesPage from '../pages/DynamicDependenciesPage';
+import BatchedMutationsPage from '../pages/BatchedMutationsPage';
+import TodosPage from '../pages/TodosPage';
 import {experimentNames, ExperimentName} from '../types';
 
 /**
