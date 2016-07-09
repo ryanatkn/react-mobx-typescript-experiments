@@ -1,6 +1,6 @@
 # React Mobx TypeScript Experiments
 
-Experiments with Mobx in a React application written with TypeScript.
+Concept demos using Mobx with React and TypeScript.
 
 [https://ryanatkn.github.io/react-mobx-typescript-experiments](https://ryanatkn.github.io/react-mobx-typescript-experiments)
 
@@ -21,7 +21,7 @@ This is similar to the strategy used by Vue.
 - I like Mobx.
 - There's less boilerplate than with Redux.
 - Writing mutating operations is easier and less error-prone than transforming immutable data,
-  and it's fully type safe, unlike Immutable.js.
+  and it's fully type safe, unlike Immutable.js and react-addons-update.
 - Composing computed properties feels natural and keeps everything nicely co-located.
   See [`src/stores/TodosStore`](https://github.com/ryanatkn/react-mobx-typescript-experiments/blob/gh-pages/src/stores/TodosStore.ts) for an example.
 - I chose to make all data transformations explicit by enabling `mobx.useStrict(true)`,
