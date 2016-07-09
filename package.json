@@ -8,7 +8,9 @@
     "typecheck": "tsc --noEmit",
     "lint": "tslint -t verbose src/**/*.ts{,x}",
     "build": "NODE_ENV=production webpack --progress --colors",
-    "test": "NODE_ENV=test mocha --require ts-node/register --require ignore-styles --require src/test src/**/*/test.{ts,tsx}"
+    "preversion": "npm run typecheck && npm run lint",
+    "version": "npm run build && git add .",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
