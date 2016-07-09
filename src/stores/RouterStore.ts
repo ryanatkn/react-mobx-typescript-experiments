@@ -11,7 +11,7 @@ export default class RouterStore {
     });
   }
 
-  @action updatePath(location: HistoryModule.Location): void {
+  @action updatePath = (location: HistoryModule.Location): void => {
     this.path = location.key;
-  }
+  };
 }

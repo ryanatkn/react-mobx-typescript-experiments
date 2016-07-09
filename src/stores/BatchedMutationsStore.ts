@@ -1,8 +1,7 @@
 import {observable, computed, action} from 'mobx';
 
 export default class BatchedMutationstore {
-  @observable
-  counter = 0;
+  @observable counter = 0;
 
   // This is used to track the number of times `counterSquared` is computed.
   counterSquaredComputeCount = 0;
@@ -14,8 +13,7 @@ export default class BatchedMutationstore {
     return this.counter * this.counter;
   }
 
-  @action
-  increment = (): void => {
+  @action increment = (): void => {
     this.counter++;
     this.counter -= 2;
     this.counter++;

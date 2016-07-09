@@ -13,33 +13,25 @@ export type TodosView = 'all' | 'completed' | 'pending';
 export const views: TodosView[] = ['all', 'completed', 'pending'];
 
 export default class TodoStore {
-  @observable
-  todos: TodoModel[] = DEFAULT_TODOS;
+  @observable todos: TodoModel[] = DEFAULT_TODOS;
+  @observable newTodoText = '';
+  @observable view: TodosView = 'all';
 
-  @observable
-  newTodoText = '';
-
-  @observable
-  view: TodosView = 'all';
-
-  @computed
-  get completedTodos(): TodoModel[] {
+  @computed get completedTodos(): TodoModel[] {
     return this.todos.filter((todo: TodoModel): boolean => todo.isComplete);
   }
 
-  @computed
-  get pendingTodos(): TodoModel[] {
+  @computed get pendingTodos(): TodoModel[] {
     return this.todos.filter((todo: TodoModel): boolean => !todo.isComplete);
   }
 
   // An example of a second-order computed property.
-  @computed
-  get completedCount(): number {
+  @computed get completedCount(): number {
     return this.completedTodos.length;
   }
 
-  @computed
-  get visibleTodos(): TodoModel[] {
+  // Another example of a second-order computed property.
+  @computed get visibleTodos(): TodoModel[] {
     switch (this.view) {
       case 'all': return this.todos;
       case 'completed': return this.completedTodos;
@@ -48,27 +40,23 @@ export default class TodoStore {
     }
   }
 
-  @action
-  addTodo(text: string): void {
+  @action addTodo = (text: string): void => {
     if (!text) {
       return;
     }
     this.todos.push(new TodoModel(text));
     this.newTodoText = '';
-  }
+  };
 
-  @action
-  removeTodo(todo: TodoModel): void {
+  @action removeTodo = (todo: TodoModel): void => {
     (this.todos as any).remove(todo); // TODO type is unfortunately array instead of Mobx array
-  }
+  };
 
-  @action
-  updateNewTodoText(text: string): void {
+  @action updateNewTodoText = (text: string): void => {
     this.newTodoText = text;
-  }
+  };
 
-  @action
-  setView(view: TodosView): void {
+  @action setView = (view: TodosView): void => {
     this.view = view;
-  }
+  };
 }
