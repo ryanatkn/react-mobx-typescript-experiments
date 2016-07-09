@@ -4,6 +4,7 @@ let _id = 0;
 
 export default class TodoModel {
   id = ++_id;
+
   @observable text = '';
   @observable isComplete = false;
 
@@ -11,8 +12,7 @@ export default class TodoModel {
     this.text = text;
   }
 
-  @action
-  toggleComplete = (): void => {
+  @action toggleComplete = (): void => {
     this.isComplete = !this.isComplete;
-  }
+  };
 }
