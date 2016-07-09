@@ -22,6 +22,7 @@ body {
   background-color: $bg-color;
   font-size: $font-size-base;
   font-family: sans-serif;
+  line-height: 1.4;
 }
 
 p {
@@ -35,12 +36,15 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
-  padding-top: $spacing-base;
-  max-width: 600px;
+  padding: $spacing-base $spacing-sm;
+  max-width: 400px;
   margin: 0 auto;
 }
 
 .form-group {
   margin-bottom: $spacing-base;
+}
+
+select {
+  padding: $spacing-xs;
 }

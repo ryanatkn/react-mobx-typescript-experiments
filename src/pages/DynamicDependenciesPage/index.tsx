@@ -35,22 +35,22 @@ export default class CounterPage extends React.Component<Props, {}> {
         </p>
         <div className="form-group">
           <div>
-            render count: {this.renderCount}
+            <small>render count:</small> {this.renderCount}
           </div>
           <div>
             {this.shouldReadCounter
-              ? <span>click count: {dynamicDependenciesStore.counter}</span>
+              ? <span><small>click count:</small> {dynamicDependenciesStore.counter}</span>
               : <em>[stopped reading counter]</em>
             }
           </div>
           <div>
-            <button onClick={this.doIncrement}>
+            <button className="pure-button" onClick={this.doIncrement}>
               increment
             </button>
           </div>
         </div>
         <div className="form-group">
-          <button onClick={this.doReset}>
+          <button className="pure-button" onClick={this.doReset}>
             reset
           </button>
         </div>

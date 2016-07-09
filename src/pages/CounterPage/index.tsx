@@ -19,7 +19,7 @@ export default class CounterPage extends React.Component<Props, {}> {
         </p>
         <div>{counterStore.counter}</div>
         <div>
-          <button onClick={counterStore.increment}>
+          <button className="pure-button" onClick={counterStore.increment}>
             increment
           </button>
         </div>

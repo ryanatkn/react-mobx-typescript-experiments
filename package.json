@@ -1,6 +1,6 @@
 {
   "name": "react-mobx-typescript-experiments",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "experiments with Mobx in a React application written with TypeScript",
   "main": "index.js",
   "scripts": {
@@ -23,6 +23,7 @@
     "mobx": "^2.3.4",
     "mobx-react": "^3.4.0",
     "normalize.css": "^4.0.0",
+    "purecss": "^0.6.0",
     "react": "^15.0.0",
     "react-dom": "^15.0.0",
     "react-redux": "^4.4.0",

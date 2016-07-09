@@ -12,11 +12,13 @@ export default class Todo extends React.Component<Props, {}> {
   render(): JSX.Element {
     const {todo} = this.props;
     return (
-      <div>
-        <label>
+      <div style={{height: '37px', lineHeight: '37px'}}>
+        <label className="pure-checkbox">
           <input type="checkbox" checked={todo.isComplete} onChange={todo.toggleComplete}/>
-          {todo.text}
-          <button onClick={this.doRemove} style={{marginLeft: 10}}>×</button>
+          <span style={{marginLeft: '8px'}}>{todo.text}</span>
+          <button className="pure-button" onClick={this.doRemove} style={{float: 'right'}}>
+            ×
+          </button>
         </label>
       </div>
     );

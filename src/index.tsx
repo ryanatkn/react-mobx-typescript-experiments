@@ -1,4 +1,5 @@
 import 'normalize.css';
+import 'purecss';
 import './styles/main.css';
 
 import createMobxStores from './main/createMobxStores';

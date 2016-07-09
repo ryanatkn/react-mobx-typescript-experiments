@@ -11,10 +11,18 @@ export default class NewTodo extends React.Component<Props, {}> {
   render(): JSX.Element {
     const {todosStore} = this.props;
     return (
-      <div>
-        <input type="text" onChange={this.doChangeText} value={todosStore.newTodoText}/>
-        <button onClick={this.doAddTodo}>add todo</button>
-      </div>
+      <form className="pure-form">
+        <fieldset>
+          <input type="text" onChange={this.doChangeText} value={todosStore.newTodoText}
+            placeholder="new todo"
+          />
+          <button type="button" className="pure-button" onClick={this.doAddTodo}
+            style={{marginLeft: '5px'}}
+          >
+            add todo
+          </button>
+        </fieldset>
+      </form>
     );
   }
 
