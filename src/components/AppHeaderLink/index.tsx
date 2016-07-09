@@ -11,7 +11,7 @@ function getPath(name: ExperimentName): string {
 export function getExperimentNameTitle(name: ExperimentName): string {
   switch (name) {
     case 'counter': return 'basic usage';
-    case 'simple-form': return 'computed properties';
+    case 'computed-properties': return 'computed properties';
     case 'todos': return 'todo list';
     default: return name.replace(/-/g, ' ').toLowerCase();
   }

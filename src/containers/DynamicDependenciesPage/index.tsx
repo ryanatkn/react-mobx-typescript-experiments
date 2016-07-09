@@ -30,7 +30,7 @@ export default class CounterPage extends React.Component<Props, {}> {
           Not reading the counter simply means
           not accessing it on the store during the render function.
           It resumes watching the counter starting with the 6th click.
-          Clicking the counter 10 times should yield only 8 renders, but the click
+          Clicking the counter 10 times should cause only 8 renders, but the click
           count should be 10.
         </p>
         <div className="form-group">

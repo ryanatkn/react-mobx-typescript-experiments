@@ -1,6 +1,6 @@
 import RouterStore from '../stores/RouterStore';
 import CounterStore from '../stores/CounterStore';
-import SimpleFormStore from '../stores/SimpleFormStore';
+import ComputedPropertiesStore from '../stores/ComputedPropertiesStore';
 import DynamicDependenciesStore from '../stores/DynamicDependenciesStore';
 import BatchedMutationsStore from '../stores/BatchedMutationsStore';
 import TodosStore from '../stores/TodosStore';
@@ -12,7 +12,7 @@ export default function createMobxStores(history: HistoryModule.History): {} { /
   return {
     routerStore: new RouterStore(history),
     counterStore: new CounterStore(),
-    simpleFormStore: new SimpleFormStore(),
+    computedPropertiesStore: new ComputedPropertiesStore(),
     dynamicDependenciesStore: new DynamicDependenciesStore(),
     BatchedMutationsStore: new BatchedMutationsStore(),
     todosStore: new TodosStore(),

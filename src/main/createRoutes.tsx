@@ -3,7 +3,7 @@ import {Route, IndexRoute} from 'react-router';
 import App from '../containers/App';
 import IndexPage from '../containers/IndexPage';
 import CounterPage from '../containers/CounterPage';
-import SimpleFormPage from '../containers/SimpleFormPage';
+import ComputedPropertiesPage from '../containers/ComputedPropertiesPage';
 import DynamicDependenciesPage from '../containers/DynamicDependenciesPage';
 import BatchedMutationsPage from '../containers/BatchedMutationsPage';
 import TodosPage from '../containers/TodosPage';
@@ -26,7 +26,7 @@ export default function createRoutes(): JSX.Element {
 export function getExperimentPage(name: ExperimentName): React.ComponentClass<any> {
   switch (name) {
     case 'counter': return CounterPage;
-    case 'simple-form': return SimpleFormPage;
+    case 'computed-properties': return ComputedPropertiesPage;
     case 'dynamic-dependencies': return DynamicDependenciesPage;
     case 'batched-mutations': return BatchedMutationsPage;
     case 'todos': return TodosPage;

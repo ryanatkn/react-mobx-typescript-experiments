@@ -8,7 +8,7 @@ export default class BatchedMutationstore {
   counterSquaredComputeCount = 0;
 
   @computed get counterSquared(): number {
-    // This is a hack to track changes for the data.
+    // This is a hack to track change counts.
     // Getters shouldn't mutate stuff in real code.
     this.counterSquaredComputeCount++;
     return this.counter * this.counter;
