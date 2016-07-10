@@ -32,6 +32,8 @@ This is similar to the strategy used by Vue.
   but I like the explicit and trackable transformations
   that Redux, Flux, and other event sourcing patterns offer.
   The Mobx devtools track and expose debug information for actions similar to Redux.
+  Actions also ensure efficiency as demonstrated in
+  the [Batched Mutations example](https://ryanatkn.github.io/react-mobx-typescript-experiments/#/batched-mutations).
   Some of these examples make mutations outside of actions for demonstration purposes,
   so `useStrict` is set to false.
 - I found myself wanting type safety in the store selectors
