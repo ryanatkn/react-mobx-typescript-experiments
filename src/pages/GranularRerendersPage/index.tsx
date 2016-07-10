@@ -35,7 +35,7 @@ export default class GranularRerendersPage extends React.Component<Props, {}> {
           The basic idea is that you store items in a centralized unrendered collection,
           create a separate collection of ids for rendered collections,
           and connect/select each item by id in the item component,
-          so changing an item does not changed a rendered collection, only the unrendered one.
+          so changing an item does not change a rendered collection, only the unrendered one.
         </p>
         <div className="form-group">
           <ItemList items={granularRerendersStore.items} ref={ITEM_LIST_REF}
