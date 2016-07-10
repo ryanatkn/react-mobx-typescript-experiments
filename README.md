@@ -4,6 +4,8 @@ Concept demos using Mobx with React and TypeScript.
 
 [https://ryanatkn.github.io/react-mobx-typescript-experiments](https://ryanatkn.github.io/react-mobx-typescript-experiments)
 
+If you have an suggestions or questions, please open an issue!
+
 ## Motivation
 After having used the excellent Redux library extensively with React,
 I wanted to explore the approach offered by Mobx.
