@@ -48,3 +48,7 @@ p {
 select {
   padding: $spacing-xs;
 }
+
+input[type="checkbox"] {
+  margin-right: 8px;
+}

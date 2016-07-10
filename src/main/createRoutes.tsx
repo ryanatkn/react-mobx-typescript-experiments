@@ -2,8 +2,9 @@ import * as React from 'react';
 import {Route, IndexRoute} from 'react-router';
 import App from '../pages/App';
 import IndexPage from '../pages/IndexPage';
-import CounterPage from '../pages/CounterPage';
+import BasicUsagePage from '../pages/BasicUsagePage';
 import ComputedPropertiesPage from '../pages/ComputedPropertiesPage';
+import GranularRerendersPage from '../pages/GranularRerendersPage';
 import DynamicDependenciesPage from '../pages/DynamicDependenciesPage';
 import BatchedMutationsPage from '../pages/BatchedMutationsPage';
 import TodosPage from '../pages/TodosPage';
@@ -25,8 +26,9 @@ export default function createRoutes(): JSX.Element {
 
 export function getExperimentPage(name: ExperimentName): React.ComponentClass<any> {
   switch (name) {
-    case 'counter': return CounterPage;
+    case 'basic-usage': return BasicUsagePage;
     case 'computed-properties': return ComputedPropertiesPage;
+    case 'granular-rerenders': return GranularRerendersPage;
     case 'dynamic-dependencies': return DynamicDependenciesPage;
     case 'batched-mutations': return BatchedMutationsPage;
     case 'todos': return TodosPage;

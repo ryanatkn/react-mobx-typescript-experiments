@@ -1,6 +1,6 @@
 import {observable, action} from 'mobx';
 
-export default class CounterStore {
+export default class DynamicDependenciesStore {
   @observable counter = 0;
 
   @action increment = (): void => {

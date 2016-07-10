@@ -7,7 +7,7 @@ interface Props {
 }
 
 @observer(['dynamicDependenciesStore'])
-export default class CounterPage extends React.Component<Props, {}> {
+export default class DynamicDependenciesPage extends React.Component<Props, {}> {
   renderCount = -1;
   shouldReadCounter = true;
 
@@ -15,7 +15,7 @@ export default class CounterPage extends React.Component<Props, {}> {
     const {dynamicDependenciesStore} = this.props;
 
     // This is a hack to demonstrate some Mobx behavior.
-    // Side effects like these shouldn't be done in real code.
+    // In normal code render functions should be kept free of side-effects.
     this.renderCount++;
     if (this.renderCount === 3) {
       this.shouldReadCounter = false;

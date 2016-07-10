@@ -3,13 +3,13 @@ import {observer} from 'mobx-react';
 import BatchedMutationsStore from '../../stores/BatchedMutationsStore';
 
 interface Props {
-  BatchedMutationsStore?: BatchedMutationsStore; // provided by the `observer` decorator
+  batchedMutationsStore?: BatchedMutationsStore; // provided by the `observer` decorator
 }
 
-@observer(['BatchedMutationsStore'])
+@observer(['batchedMutationsStore'])
 export default class BatchedMutationsPage extends React.Component<Props, {}> {
   render(): JSX.Element {
-    const {BatchedMutationsStore} = this.props;
+    const {batchedMutationsStore} = this.props;
     return (
       <div className="page">
         <p>
@@ -37,30 +37,30 @@ export default class BatchedMutationsPage extends React.Component<Props, {}> {
           computed properties used in a React component and reactions/autorun,
           will run only a single time when the upstream data changes are wrapped in an action.
         </p>
-        <div><small>counter:</small> {BatchedMutationsStore.counter}</div>
-        <div><small>counter squared:</small> {BatchedMutationsStore.counterSquared}</div>
+        <div><small>counter:</small> {batchedMutationsStore.counter}</div>
+        <div><small>counter squared:</small> {batchedMutationsStore.counterSquared}</div>
         <div>
           <small>counter squared compute count:</small>{' '}
-          {BatchedMutationsStore.counterSquaredComputeCount}
+          {batchedMutationsStore.counterSquaredComputeCount}
         </div>
         <div>
           <small>counter reaction count:</small>{' '}
-          {BatchedMutationsStore.counterReactionCount}
+          {batchedMutationsStore.counterReactionCount}
         </div>
         <div>
           <small>counter autorun count:</small>{' '}
-          {BatchedMutationsStore.counterAutorunCount}
+          {batchedMutationsStore.counterAutorunCount}
         </div>
         <div className="form-group btns-vertical">
-          <button className="pure-button" onClick={BatchedMutationsStore.incrementWithAction}>
+          <button className="pure-button" onClick={batchedMutationsStore.incrementWithAction}>
             increment and decrement many times in an action
           </button>
-          <button className="pure-button" onClick={BatchedMutationsStore.increment}>
+          <button className="pure-button" onClick={batchedMutationsStore.increment}>
             increment and decrement many times without an action
           </button>
         </div>
         <div className="form-group">
-          <button className="pure-button" onClick={BatchedMutationsStore.reset}>
+          <button className="pure-button" onClick={batchedMutationsStore.reset}>
             reset
           </button>
         </div>

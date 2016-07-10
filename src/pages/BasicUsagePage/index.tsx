@@ -1,15 +1,15 @@
 import * as React from 'react';
 import {observer} from 'mobx-react';
-import CounterStore from '../../stores/CounterStore';
+import BasicUsageStore from '../../stores/BasicUsageStore';
 
 interface Props {
-  counterStore?: CounterStore; // provided by the `observer` decorator
+  basicUsageStore?: BasicUsageStore; // provided by the `observer` decorator
 }
 
-@observer(['counterStore'])
-export default class CounterPage extends React.Component<Props, {}> {
+@observer(['basicUsageStore'])
+export default class BasicUsagePage extends React.Component<Props, {}> {
   render(): JSX.Element {
-    const {counterStore} = this.props;
+    const {basicUsageStore} = this.props;
     return (
       <div className="page">
         <p>
@@ -17,9 +17,9 @@ export default class CounterPage extends React.Component<Props, {}> {
           that their render funtions implicitly depend on.
           No explicit subscriptions are needed to achieve granular re-renders.
         </p>
-        <div>{counterStore.counter}</div>
+        <div>{basicUsageStore.counter}</div>
         <div>
-          <button className="pure-button" onClick={counterStore.increment}>
+          <button className="pure-button" onClick={basicUsageStore.increment}>
             increment
           </button>
         </div>
