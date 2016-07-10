@@ -11,7 +11,10 @@ import {Router} from 'react-router';
 import {Provider} from 'mobx-react';
 import {useStrict} from 'mobx';
 
-useStrict(true);
+// In a real application, I would use `useStrict(true)`,
+// but some examples demonstrate the differences between using and not using
+// actions, so we need to keep it disabled to prevent those examples from throwing.
+useStrict(false);
 
 /**
  * Create the 	 store and React Router history and routes.

@@ -14,6 +14,7 @@ export default class ComputedPropertiesStore {
     // This is a hack to track change counts.
     // Getters shouldn't mutate stuff in real code.
     this.fullNameComputeCount++;
+
     return this.firstName + ' ' + this.lastName;
   }
 

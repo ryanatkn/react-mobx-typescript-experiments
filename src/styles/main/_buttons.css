@@ -26,3 +26,13 @@
     outline: none;
   }
 }
+
+.btns-vertical {
+  button {
+    display: block;
+    margin-bottom: 3px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -24,12 +24,16 @@ This is similar to the strategy used by Vue.
   and it's fully type safe, unlike Immutable.js and react-addons-update.
 - Composing computed properties feels natural and keeps everything nicely co-located.
   See [`src/stores/TodosStore`](https://github.com/ryanatkn/react-mobx-typescript-experiments/blob/gh-pages/src/stores/TodosStore.ts) for an example.
-- I chose to make all data transformations explicit by enabling `mobx.useStrict(true)`,
+- If I were writing a real application,
+  I would make all data transformations explicit by enabling `mobx.useStrict(true)`,
   which requires that all observable-mutating operations be performed in an `@action`.
   This could be seen as additional boilerplate,
   because for example updating a simple property requires defining and calling an action function,
   but I like the explicit and trackable transformations
   that Redux, Flux, and other event sourcing patterns offer.
+  The Mobx devtools track and expose debug information for actions similar to Redux.
+  Some of these examples make mutations outside of actions for demonstration purposes,
+  so `useStrict` is set to false.
 - I found myself wanting type safety in the store selectors
   instead of `@observer(['storeNameString'])`.
   This would be easy to implement in a fork of mobx-react.
