@@ -16,7 +16,7 @@ export default class GranularRerendersPage extends React.Component<Props, {}> {
     return (
       <div className="page">
         <p>
-          Mobx rerenders React components with granular precision when their observed data changes.
+          MobX rerenders React components with granular precision when their observed data changes.
           When using React with a library like Redux that relies on immutable data,
           changing an item in a collection requires changing
           the references of both the item and its collection
@@ -25,7 +25,7 @@ export default class GranularRerendersPage extends React.Component<Props, {}> {
         </p>
         <p>
           In this example, notice how toggling an item does not cause the list to rerender.
-          This is because Mobx automatically rerenders only the components
+          This is because MobX automatically rerenders only the components
           which could actually be affected by the data changes.
         </p>
         <p>

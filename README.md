@@ -1,6 +1,6 @@
-# React Mobx TypeScript Experiments
+# React MobX TypeScript Experiments
 
-Concept demos using Mobx with React and TypeScript.
+Concept demos using MobX with React and TypeScript.
 
 [https://ryanatkn.github.io/react-mobx-typescript-experiments](https://ryanatkn.github.io/react-mobx-typescript-experiments)
 
@@ -8,19 +8,19 @@ If you have an suggestions or questions, please open an issue!
 
 ## Motivation
 After having used the excellent Redux library extensively with React,
-I wanted to explore the approach offered by Mobx.
+I wanted to explore the approach offered by MobX.
 Whereas Redux embraces immutable data and renders React components
 from the top down starting with the connected components up the hierarchy,
-Mobx embraces mutable, observable data,
+MobX embraces mutable, observable data,
 granularly re-rendering components automatically when data changes.
 
-Mobx tracks the dependencies of each `@observer` component render function
+MobX tracks the dependencies of each `@observer` component render function
 to intelligently re-render only when that data changes.
 It's a bit magical, which, depending on your perspective, may be good or bad or both.
 This is similar to the strategy used by Vue.
 
 ## Findings
-- I like Mobx.
+- I like MobX.
 - There's less boilerplate than with Redux.
 - Writing mutating operations is easier and less error-prone than transforming immutable data,
   and it's fully type safe, unlike Immutable.js and react-addons-update.
@@ -33,7 +33,7 @@ This is similar to the strategy used by Vue.
   because for example updating a simple property requires defining and calling an action function,
   but I like the explicit and trackable transformations
   that Redux, Flux, and other event sourcing patterns offer.
-  The Mobx devtools track and expose debug information for actions similar to Redux.
+  The MobX devtools track and expose debug information for actions similar to Redux.
   Actions also ensure efficiency as demonstrated in
   the [Batched Mutations example](https://ryanatkn.github.io/react-mobx-typescript-experiments/#/batched-mutations).
   Some of these examples make mutations outside of actions for demonstration purposes,

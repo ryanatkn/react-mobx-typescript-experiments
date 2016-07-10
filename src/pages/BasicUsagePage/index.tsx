@@ -13,7 +13,7 @@ export default class BasicUsagePage extends React.Component<Props, {}> {
     return (
       <div className="page">
         <p>
-          Mobx makes React components automatically react to the data changes
+          MobX makes React components automatically react to the data changes
           that their render funtions implicitly depend on.
           No explicit subscriptions are needed to achieve granular re-renders.
         </p>

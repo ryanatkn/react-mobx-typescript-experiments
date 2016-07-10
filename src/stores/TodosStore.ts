@@ -49,7 +49,7 @@ export default class TodoStore {
   };
 
   @action removeTodo = (todo: TodoModel): void => {
-    (this.todos as any).remove(todo); // TODO type is unfortunately array instead of Mobx array
+    (this.todos as any).remove(todo); // TODO type is unfortunately array instead of MobX array
   };
 
   @action updateNewTodoText = (text: string): void => {

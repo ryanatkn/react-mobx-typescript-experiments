@@ -20,7 +20,7 @@ export default class Link extends React.Component<Props, {}> {
   render(): JSX.Element {
     const {routerStore} = this.props;
 
-    // Read the router store's observable path so Mobx knows to re-render on route changes,
+    // Read the router store's observable path so MobX knows to re-render on route changes,
     // otherwise the `active` class on links never gets updated.
     routerStore.path; // tslint:disable-line:no-unused-expression
 

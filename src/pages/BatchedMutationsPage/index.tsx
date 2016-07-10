@@ -13,10 +13,10 @@ export default class BatchedMutationsPage extends React.Component<Props, {}> {
     return (
       <div className="page">
         <p>
-          <a href="https://mobxjs.github.io/mobx/refguide/action.html">Actions in Mobx</a> are
+          <a href="https://mobxjs.github.io/mobx/refguide/action.html">Actions in MobX</a> are
           functions that mutate observable data.
           Using actions is optional unless `mobx.useStrict(true)` is used.
-          Combined wih the Mobx devtools, they achieve many of the same benefits
+          Combined wih the MobX devtools, they achieve many of the same benefits
           that actions in Redux, Flux, and other event sourcing patterns provide.
         </p>
         <p>
@@ -25,7 +25,7 @@ export default class BatchedMutationsPage extends React.Component<Props, {}> {
           until the action completes.
         </p>
         <p>
-          Mobx allows you to react to any observable data changes via `reaction` and `autorun`,
+          MobX allows you to react to any observable data changes via `reaction` and `autorun`,
           which have similar purposes but different characteristics.
           In this example the observable counter is watched by a reaction and the number of times
           it appears to change is tracked as the "counter reaction count".

@@ -15,7 +15,7 @@ export default class AppHeader extends React.Component<Props, {}> {
       <div className="app-header">
         <Link to="/" className="link-unstyled" onlyActiveOnIndex={true}>
           <h1>
-            React Mobx TypeScript Experiments
+            React MobX TypeScript Experiments
           </h1>
         </Link>
         <div className="app-header-nav">

@@ -1,7 +1,7 @@
 {
   "name": "react-mobx-typescript-experiments",
   "version": "0.1.4",
-  "description": "experiments with Mobx in a React application written with TypeScript",
+  "description": "experiments with MobX in a React application written with TypeScript",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --progress --colors --inline",

@@ -13,7 +13,7 @@ export default class ComputedPropertiesPage extends React.Component<Props, {}> {
     return (
       <div className="page">
         <p>
-          Mobx has a simple way to produce derived data via computed properties.
+          MobX has a simple way to produce derived data via computed properties.
           Note that even though `fullName` is read from the store multiple times,
           it is computed only once each time the data changes.
         </p>

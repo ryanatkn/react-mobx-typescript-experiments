@@ -14,7 +14,7 @@ export default class Item extends React.Component<Props, {}> {
   render(): JSX.Element {
     const {item} = this.props;
 
-    // This is a hack to demonstrate some Mobx behavior.
+    // This is a hack to demonstrate some MobX behavior.
     // In normal code render functions should be kept free of side-effects.
     this.renderCount++;
 

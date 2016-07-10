@@ -14,7 +14,7 @@ export default class DynamicDependenciesPage extends React.Component<Props, {}> 
   render(): JSX.Element {
     const {dynamicDependenciesStore} = this.props;
 
-    // This is a hack to demonstrate some Mobx behavior.
+    // This is a hack to demonstrate some MobX behavior.
     // In normal code render functions should be kept free of side-effects.
     this.renderCount++;
     if (this.renderCount === 3) {
@@ -24,7 +24,7 @@ export default class DynamicDependenciesPage extends React.Component<Props, {}> 
     return (
       <div className="page">
         <p>
-          Mobx dynamically updates a component's dependencies on each render.
+          MobX dynamically updates a component's dependencies on each render.
           This component stops reading the counter for the 4th and 5th clicks,
           so the render count should not increment for them.
           Not reading the counter simply means

@@ -7,7 +7,7 @@ export default class IndexPage extends React.Component<{}, {}> {
     return (
       <div className="page text-block" style={{textAlign: 'center'}}>
         <p>
-          Mobx concept demos with React and TypeScript.
+          <a href="https://github.com/mobxjs/mobx">MobX</a> concept demos with React and TypeScript.
         </p>
         <p>
           Click through the links above to check out the different demos.

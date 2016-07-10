@@ -7,7 +7,7 @@ import BatchedMutationsStore from '../stores/BatchedMutationsStore';
 import TodosStore from '../stores/TodosStore';
 
 /**
- * Creates the Mobx stores.
+ * Creates the MobX stores.
  */
 export default function createMobxStores(history: HistoryModule.History): {} { // TODO Stores type?
   return {
