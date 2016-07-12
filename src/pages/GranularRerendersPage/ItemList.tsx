@@ -8,13 +8,10 @@ interface Props {
   onToggle(item: ItemModel): void;
 }
 
-function getItemRef(item: ItemModel): string {
-  return 'item' + item.id;
-}
-
 @observer
 export default class ItemList extends React.Component<Props, {}> {
   renderCount = -1;
+  itemInstances: Dict<Item> = {};
 
   render(): JSX.Element {
     const {items, onToggle} = this.props;
@@ -27,7 +24,11 @@ export default class ItemList extends React.Component<Props, {}> {
       <div>
         Item list - <small>{this.renderCount} rerenders</small>
         {items.map((item: ItemModel): JSX.Element => {
-          return <Item key={item.id} ref={getItemRef(item)} item={item} onToggle={onToggle}/>;
+          return (
+            <Item key={item.id} ref={(c) => this.itemInstances[item.id] = c}
+              item={item} onToggle={onToggle}
+            />
+          );
         })}
       </div>
     );
@@ -37,9 +38,10 @@ export default class ItemList extends React.Component<Props, {}> {
     this.renderCount = -1;
 
     // Also reset each item's render count.
-    for (const item of this.props.items) {
-      const itemInstance = this.refs[getItemRef(item)] as Item;
-      itemInstance.resetRenderCount();
+    for (const id in this.itemInstances) {
+      if (this.itemInstances[id]) { // may have been unmounted
+        this.itemInstances[id].resetRenderCount();
+      }
     }
   }
 }

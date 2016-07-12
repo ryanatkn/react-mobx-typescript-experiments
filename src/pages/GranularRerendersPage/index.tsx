@@ -4,8 +4,6 @@ import GranularRerendersStore from '../../stores/GranularRerendersStore';
 import ItemList from './ItemList';
 import {Stores} from '../../types';
 
-const ITEM_LIST_REF = 'itemList';
-
 interface SelectedStores {
   store?: GranularRerendersStore;
 }
@@ -15,6 +13,8 @@ interface Props extends SelectedStores {}
 @inject((stores: Stores): Props => ({store: stores.granularRerendersStore}))
 @observer
 export default class GranularRerendersPage extends React.Component<Props, {}> {
+  itemListInstance: ItemList;
+
   render(): JSX.Element {
     const {store} = this.props;
     return (
@@ -42,7 +42,7 @@ export default class GranularRerendersPage extends React.Component<Props, {}> {
           so changing an item does not change a rendered collection, only the unrendered one.
         </p>
         <div className="form-group">
-          <ItemList items={store.items} ref={ITEM_LIST_REF}
+          <ItemList items={store.items} ref={(c) => this.itemListInstance = c}
             onToggle={store.toggleItem}
           />
         </div>
@@ -63,8 +63,7 @@ export default class GranularRerendersPage extends React.Component<Props, {}> {
   doReset = (): void => {
     // First reset the item list's render count, and all of its items' render counts.
     // It's easier to put this data on the component instances rather than the store.
-    const itemListInstance = this.refs[ITEM_LIST_REF] as ItemList;
-    itemListInstance.resetRenderCount();
+    this.itemListInstance.resetRenderCount();
 
     this.props.store.reset();
   };

@@ -18,11 +18,11 @@ export default class TodoStore {
   @observable view: TodosView = 'all';
 
   @computed get completedTodos(): TodoModel[] {
-    return this.todos.filter((todo: TodoModel): boolean => todo.isComplete);
+    return this.todos.filter((todo) => todo.isComplete);
   }
 
   @computed get pendingTodos(): TodoModel[] {
-    return this.todos.filter((todo: TodoModel): boolean => !todo.isComplete);
+    return this.todos.filter((todo) => !todo.isComplete);
   }
 
   // An example of a second-order computed property.
