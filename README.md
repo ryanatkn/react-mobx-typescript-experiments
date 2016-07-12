@@ -39,7 +39,7 @@ This is similar to the strategy used by Vue.
   Some of these examples make mutations outside of actions for demonstration purposes,
   so `useStrict` is set to false.
 - I found myself wanting type safety in the store selectors
-  instead of `@observer(['storeNameString'])`.
+  instead of `@inject('storeNameString')`.
   This would be easy to implement in a fork of mobx-react.
 
 ## Develop

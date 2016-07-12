@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {observer} from 'mobx-react';
+import {observer, inject} from 'mobx-react';
 import TodosStore from '../../stores/TodosStore';
 import TodoModel from '../../models/TodoModel';
 import Todo from './Todo';
@@ -10,7 +10,8 @@ interface Props {
   todosStore?: TodosStore;
 }
 
-@observer(['todosStore'])
+@inject('todosStore')
+@observer
 export default class TodosPage extends React.Component<Props, {}> {
   render(): JSX.Element {
     const {todosStore} = this.props;

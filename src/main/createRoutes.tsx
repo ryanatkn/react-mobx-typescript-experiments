@@ -4,6 +4,7 @@ import App from '../pages/App';
 import IndexPage from '../pages/IndexPage';
 import BasicUsagePage from '../pages/BasicUsagePage';
 import ComputedPropertiesPage from '../pages/ComputedPropertiesPage';
+import EfficientNestedRerendersPage from '../pages/EfficientNestedRerendersPage';
 import GranularRerendersPage from '../pages/GranularRerendersPage';
 import DynamicDependenciesPage from '../pages/DynamicDependenciesPage';
 import BatchedMutationsPage from '../pages/BatchedMutationsPage';
@@ -28,6 +29,7 @@ export function getExperimentPage(name: ExperimentName): React.ComponentClass<an
   switch (name) {
     case 'basic-usage': return BasicUsagePage;
     case 'computed-properties': return ComputedPropertiesPage;
+    case 'efficient-nested-rerenders': return EfficientNestedRerendersPage;
     case 'granular-rerenders': return GranularRerendersPage;
     case 'dynamic-dependencies': return DynamicDependenciesPage;
     case 'batched-mutations': return BatchedMutationsPage;

@@ -1,12 +1,13 @@
 import * as React from 'react';
-import {observer} from 'mobx-react';
+import {observer, inject} from 'mobx-react';
 import ComputedPropertiesStore from '../../stores/ComputedPropertiesStore';
 
 interface Props {
   computedPropertiesStore?: ComputedPropertiesStore; // provided by the `observer` decorator
 }
 
-@observer(['computedPropertiesStore'])
+@inject('computedPropertiesStore')
+@observer
 export default class ComputedPropertiesPage extends React.Component<Props, {}> {
   render(): JSX.Element {
     const {computedPropertiesStore} = this.props;

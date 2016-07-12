@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {observer} from 'mobx-react';
+import {observer, inject} from 'mobx-react';
 import GranularRerendersStore from '../../stores/GranularRerendersStore';
 import ItemList from './ItemList';
 
@@ -9,7 +9,8 @@ interface Props {
 
 const ITEM_LIST_REF = 'itemList';
 
-@observer(['granularRerendersStore'])
+@inject('granularRerendersStore')
+@observer
 export default class GranularRerendersPage extends React.Component<Props, {}> {
   render(): JSX.Element {
     const {granularRerendersStore} = this.props;

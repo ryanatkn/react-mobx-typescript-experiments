@@ -1,12 +1,13 @@
 import * as React from 'react';
-import {observer} from 'mobx-react';
+import {observer, inject} from 'mobx-react';
 import BatchedMutationsStore from '../../stores/BatchedMutationsStore';
 
 interface Props {
   batchedMutationsStore?: BatchedMutationsStore; // provided by the `observer` decorator
 }
 
-@observer(['batchedMutationsStore'])
+@inject('batchedMutationsStore')
+@observer
 export default class BatchedMutationsPage extends React.Component<Props, {}> {
   render(): JSX.Element {
     const {batchedMutationsStore} = this.props;

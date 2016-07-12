@@ -1,6 +1,7 @@
 import RouterStore from '../stores/RouterStore';
 import BasicUsageStore from '../stores/BasicUsageStore';
 import ComputedPropertiesStore from '../stores/ComputedPropertiesStore';
+import EfficientNestedRerendersStore from '../stores/EfficientNestedRerendersStore';
 import GranularRerendersStore from '../stores/GranularRerendersStore';
 import DynamicDependenciesStore from '../stores/DynamicDependenciesStore';
 import BatchedMutationsStore from '../stores/BatchedMutationsStore';
@@ -14,6 +15,7 @@ export default function createMobxStores(history: HistoryModule.History): {} { /
     routerStore: new RouterStore(history),
     basicUsageStore: new BasicUsageStore(),
     computedPropertiesStore: new ComputedPropertiesStore(),
+    efficientNestedRerendersStore: new EfficientNestedRerendersStore(),
     granularRerendersStore: new GranularRerendersStore(),
     dynamicDependenciesStore: new DynamicDependenciesStore(),
     batchedMutationsStore: new BatchedMutationsStore(),

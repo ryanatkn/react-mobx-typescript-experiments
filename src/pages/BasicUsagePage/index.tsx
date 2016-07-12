@@ -1,12 +1,13 @@
 import * as React from 'react';
-import {observer} from 'mobx-react';
+import {observer, inject} from 'mobx-react';
 import BasicUsageStore from '../../stores/BasicUsageStore';
 
 interface Props {
   basicUsageStore?: BasicUsageStore; // provided by the `observer` decorator
 }
 
-@observer(['basicUsageStore'])
+@inject('basicUsageStore')
+@observer
 export default class BasicUsagePage extends React.Component<Props, {}> {
   render(): JSX.Element {
     const {basicUsageStore} = this.props;

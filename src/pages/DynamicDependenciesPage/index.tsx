@@ -1,12 +1,13 @@
 import * as React from 'react';
-import {observer} from 'mobx-react';
+import {observer, inject} from 'mobx-react';
 import DynamicDependenciesStore from '../../stores/DynamicDependenciesStore';
 
 interface Props {
   dynamicDependenciesStore?: DynamicDependenciesStore; // provided by the `observer` decorator
 }
 
-@observer(['dynamicDependenciesStore'])
+@inject('dynamicDependenciesStore')
+@observer
 export default class DynamicDependenciesPage extends React.Component<Props, {}> {
   renderCount = -1;
   shouldReadCounter = true;

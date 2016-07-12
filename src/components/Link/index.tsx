@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {Link as RRLink} from 'react-router';
-import {observer} from 'mobx-react';
+import {observer, inject} from 'mobx-react';
 import RouterStore from '../../stores/RouterStore';
 import * as omit from 'lodash/omit';
 
@@ -15,7 +15,8 @@ interface SelectedProps {
 
 interface Props extends SelectedProps, ReactRouter.LinkProps {}
 
-@observer(['routerStore'])
+@inject('routerStore')
+@observer
 export default class Link extends React.Component<Props, {}> {
   render(): JSX.Element {
     const {routerStore} = this.props;
