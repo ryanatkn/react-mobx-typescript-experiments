@@ -45,12 +45,12 @@ export default class GranularRerendersPage extends React.Component<Props, {}> {
         </div>
         <div className="form-group">
           <button className="pure-button" onClick={granularRerendersStore.addItem}>
-            Add item
+            add item
           </button>
         </div>
         <div className="form-group">
           <button className="pure-button" onClick={this.doReset}>
-            Reset
+            reset
           </button>
         </div>
       </div>

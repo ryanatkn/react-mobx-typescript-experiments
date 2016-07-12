@@ -36,12 +36,12 @@ export default class EfficientNestedRerendersPage extends React.Component<Props,
         </div>
         <div className="form-group">
           <button className="pure-button" onClick={increment}>
-            Increment
+            increment
           </button>
         </div>
         <div className="form-group">
           <button className="pure-button" onClick={reset}>
-            Reset
+            reset
           </button>
         </div>
       </div>
