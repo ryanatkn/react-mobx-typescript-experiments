@@ -38,9 +38,6 @@ This is similar to the strategy used by Vue.
   the [Batched Mutations example](https://ryanatkn.github.io/react-mobx-typescript-experiments/#/batched-mutations).
   Some of these examples make mutations outside of actions for demonstration purposes,
   so `useStrict` is set to false.
-- I found myself wanting type safety in the store selectors
-  instead of `@inject('storeNameString')`.
-  This would be easy to implement in a fork of mobx-react.
 
 ## Develop
 

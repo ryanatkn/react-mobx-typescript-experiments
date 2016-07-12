@@ -1,19 +1,22 @@
 import * as React from 'react';
 import {observer, inject} from 'mobx-react';
 import DynamicDependenciesStore from '../../stores/DynamicDependenciesStore';
+import {Stores} from '../../types';
 
-interface Props {
-  dynamicDependenciesStore?: DynamicDependenciesStore; // provided by the `observer` decorator
+interface SelectedStores {
+  store?: DynamicDependenciesStore;
 }
 
-@inject('dynamicDependenciesStore')
+interface Props extends SelectedStores {}
+
+@inject((stores: Stores): Props => ({store: stores.dynamicDependenciesStore}))
 @observer
 export default class DynamicDependenciesPage extends React.Component<Props, {}> {
   renderCount = -1;
   shouldReadCounter = true;
 
   render(): JSX.Element {
-    const {dynamicDependenciesStore} = this.props;
+    const {store} = this.props;
 
     // This is a hack to demonstrate some MobX behavior.
     // In normal code render functions should be kept free of side-effects.
@@ -40,7 +43,7 @@ export default class DynamicDependenciesPage extends React.Component<Props, {}> 
           </div>
           <div>
             {this.shouldReadCounter
-              ? <span><small>click count:</small> {dynamicDependenciesStore.counter}</span>
+              ? <span><small>click count:</small> {store.counter}</span>
               : <em>[stopped reading counter]</em>
             }
           </div>
@@ -60,8 +63,8 @@ export default class DynamicDependenciesPage extends React.Component<Props, {}> 
   }
 
   doIncrement = (): void => {
-    this.props.dynamicDependenciesStore.increment();
-    if (this.props.dynamicDependenciesStore.counter > 5) {
+    this.props.store.increment();
+    if (this.props.store.counter > 5) {
       this.shouldReadCounter = true;
       this.forceUpdate();
     }
@@ -70,7 +73,7 @@ export default class DynamicDependenciesPage extends React.Component<Props, {}> 
   doReset = (): void => {
     this.renderCount = -1;
     this.shouldReadCounter = true;
-    this.props.dynamicDependenciesStore.reset();
+    this.props.store.reset();
     this.forceUpdate();
   }
 }

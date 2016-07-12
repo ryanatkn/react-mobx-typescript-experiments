@@ -2,17 +2,19 @@ import * as React from 'react';
 import {observer, inject} from 'mobx-react';
 import EfficientNestedRerendersStore from '../../stores/EfficientNestedRerendersStore';
 import CounterDisplay from './CounterDisplay';
+import {Stores} from '../../types';
 
-interface Props {
-  // provided by the `observer` decorator
-  efficientNestedRerendersStore?: EfficientNestedRerendersStore;
+interface SelectedStores {
+  store?: EfficientNestedRerendersStore;
 }
 
-@inject('efficientNestedRerendersStore')
+interface Props extends SelectedStores {}
+
+@inject((stores: Stores): Props => ({store: stores.efficientNestedRerendersStore}))
 @observer
 export default class EfficientNestedRerendersPage extends React.Component<Props, {}> {
   render(): JSX.Element {
-    const {efficientNestedRerendersStore: {counter, increment, reset}} = this.props;
+    const {store: {counter, increment, reset}} = this.props;
     return (
       <div className="page">
         <p>

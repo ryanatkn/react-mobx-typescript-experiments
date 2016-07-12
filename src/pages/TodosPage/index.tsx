@@ -5,16 +5,19 @@ import TodoModel from '../../models/TodoModel';
 import Todo from './Todo';
 import NewTodo from './NewTodo';
 import TodoViewControls from './TodoViewControls';
+import {Stores} from '../../types';
 
-interface Props {
-  todosStore?: TodosStore;
+interface SelectedStores {
+  store?: TodosStore;
 }
 
-@inject('todosStore')
+interface Props extends SelectedStores {}
+
+@inject((stores: Stores): Props => ({store: stores.todosStore}))
 @observer
 export default class TodosPage extends React.Component<Props, {}> {
   render(): JSX.Element {
-    const {todosStore} = this.props;
+    const {store} = this.props;
     return (
       <div className="page">
         <p>
@@ -24,11 +27,11 @@ export default class TodosPage extends React.Component<Props, {}> {
           and defining second-order computed properties.
         </p>
         <div>
-          {todosStore.completedCount}/{todosStore.todos.length} complete
+          {store.completedCount}/{store.todos.length} complete
         </div>
-        <TodoViewControls todosStore={todosStore}/>
-        <NewTodo todosStore={todosStore}/>
-        {todosStore.visibleTodos.map((todo: TodoModel): JSX.Element => {
+        <TodoViewControls todosStore={store}/>
+        <NewTodo todosStore={store}/>
+        {store.visibleTodos.map((todo: TodoModel): JSX.Element => {
           return <Todo key={todo.id} todo={todo} onRemove={this.doRemoveTodo}/>;
         })}
       </div>
@@ -36,6 +39,6 @@ export default class TodosPage extends React.Component<Props, {}> {
   }
 
   doRemoveTodo = (todo: TodoModel): void => {
-    this.props.todosStore.removeTodo(todo);
+    this.props.store.removeTodo(todo);
   };
 }

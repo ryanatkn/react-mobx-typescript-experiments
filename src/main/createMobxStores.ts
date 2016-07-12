@@ -1,3 +1,4 @@
+import {Stores} from '../types';
 import RouterStore from '../stores/RouterStore';
 import BasicUsageStore from '../stores/BasicUsageStore';
 import ComputedPropertiesStore from '../stores/ComputedPropertiesStore';
@@ -10,7 +11,7 @@ import TodosStore from '../stores/TodosStore';
 /**
  * Creates the MobX stores.
  */
-export default function createMobxStores(history: HistoryModule.History): {} { // TODO Stores type?
+export default function createMobxStores(history: HistoryModule.History): Stores {
   return {
     routerStore: new RouterStore(history),
     basicUsageStore: new BasicUsageStore(),

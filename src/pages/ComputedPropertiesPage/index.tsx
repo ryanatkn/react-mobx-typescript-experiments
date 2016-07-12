@@ -1,16 +1,19 @@
 import * as React from 'react';
 import {observer, inject} from 'mobx-react';
 import ComputedPropertiesStore from '../../stores/ComputedPropertiesStore';
+import {Stores} from '../../types';
 
-interface Props {
-  computedPropertiesStore?: ComputedPropertiesStore; // provided by the `observer` decorator
+interface SelectedStores {
+  store?: ComputedPropertiesStore;
 }
 
-@inject('computedPropertiesStore')
+interface Props extends SelectedStores {}
+
+@inject((stores: Stores): Props => ({store: stores.computedPropertiesStore}))
 @observer
 export default class ComputedPropertiesPage extends React.Component<Props, {}> {
   render(): JSX.Element {
-    const {computedPropertiesStore} = this.props;
+    const {store} = this.props;
     return (
       <div className="page">
         <p>
@@ -23,30 +26,30 @@ export default class ComputedPropertiesPage extends React.Component<Props, {}> {
             <label htmlFor="first-name">
               first name
             </label>
-            <input type="text" id="first-name" value={computedPropertiesStore.firstName}
+            <input type="text" id="first-name" value={store.firstName}
               onChange={this.doChangeFirstName}
             />
             <label htmlFor="last-name">
               last name
             </label>
-            <input type="text" id="last-name" value={computedPropertiesStore.lastName}
+            <input type="text" id="last-name" value={store.lastName}
               onChange={this.doChangeLastName}
             />
             <div>
-              <small>computed full name:</small> {computedPropertiesStore.fullName}
+              <small>computed full name:</small> {store.fullName}
             </div>
             <div>
-              <small>computed full name again:</small> {computedPropertiesStore.fullName}
+              <small>computed full name again:</small> {store.fullName}
             </div>
             <div>
-              <small>computed full name yet again:</small> {computedPropertiesStore.fullName}
+              <small>computed full name yet again:</small> {store.fullName}
             </div>
             <div>
               <small>number of times full name has been computed:</small>{' '}
-              {computedPropertiesStore.fullNameComputeCount}
+              {store.fullNameComputeCount}
             </div>
             <button type="button" className="pure-button"
-              onClick={computedPropertiesStore.reset}
+              onClick={store.reset}
             >
               reset
             </button>
@@ -58,11 +61,11 @@ export default class ComputedPropertiesPage extends React.Component<Props, {}> {
 
   doChangeFirstName = (e: React.FormEvent): void => {
     const target = e.target as HTMLInputElement;
-    this.props.computedPropertiesStore.updateFirstName(target.value);
+    this.props.store.updateFirstName(target.value);
   };
 
   doChangeLastName = (e: React.FormEvent): void => {
     const target = e.target as HTMLInputElement;
-    this.props.computedPropertiesStore.updateLastName(target.value);
+    this.props.store.updateLastName(target.value);
   };
 }

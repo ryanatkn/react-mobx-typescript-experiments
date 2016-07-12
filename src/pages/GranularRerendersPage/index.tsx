@@ -2,18 +2,21 @@ import * as React from 'react';
 import {observer, inject} from 'mobx-react';
 import GranularRerendersStore from '../../stores/GranularRerendersStore';
 import ItemList from './ItemList';
-
-interface Props {
-  granularRerendersStore?: GranularRerendersStore; // provided by the `observer` decorator
-}
+import {Stores} from '../../types';
 
 const ITEM_LIST_REF = 'itemList';
 
-@inject('granularRerendersStore')
+interface SelectedStores {
+  store?: GranularRerendersStore;
+}
+
+interface Props extends SelectedStores {}
+
+@inject((stores: Stores): Props => ({store: stores.granularRerendersStore}))
 @observer
 export default class GranularRerendersPage extends React.Component<Props, {}> {
   render(): JSX.Element {
-    const {granularRerendersStore} = this.props;
+    const {store} = this.props;
     return (
       <div className="page">
         <p>
@@ -39,12 +42,12 @@ export default class GranularRerendersPage extends React.Component<Props, {}> {
           so changing an item does not change a rendered collection, only the unrendered one.
         </p>
         <div className="form-group">
-          <ItemList items={granularRerendersStore.items} ref={ITEM_LIST_REF}
-            onToggle={granularRerendersStore.toggleItem}
+          <ItemList items={store.items} ref={ITEM_LIST_REF}
+            onToggle={store.toggleItem}
           />
         </div>
         <div className="form-group">
-          <button className="pure-button" onClick={granularRerendersStore.addItem}>
+          <button className="pure-button" onClick={store.addItem}>
             add item
           </button>
         </div>
@@ -63,6 +66,6 @@ export default class GranularRerendersPage extends React.Component<Props, {}> {
     const itemListInstance = this.refs[ITEM_LIST_REF] as ItemList;
     itemListInstance.resetRenderCount();
 
-    this.props.granularRerendersStore.reset();
+    this.props.store.reset();
   };
 }
