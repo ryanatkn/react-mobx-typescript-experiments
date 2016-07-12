@@ -12,7 +12,7 @@
       align-items: center;
       justify-content: center;
       margin: 0;
-      height: calc($nav-height * $golden-mean);
+      min-height: calc($nav-height * $golden-mean);
       text-shadow: 1px 1px 0 $primary-color-darker;
 
       &:hover {

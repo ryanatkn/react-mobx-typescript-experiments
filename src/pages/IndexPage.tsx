@@ -15,7 +15,8 @@ export default class IndexPage extends React.Component<{}, {}> {
           please <a href="https://github.com/ryanatkn/react-mobx-typescript-experiments/issues">open an issue</a>!
         </p>
         <p>
-          <a href="https://github.com/ryanatkn/react-mobx-typescript-experiments">source on GitHub</a>
+          See <a href="https://github.com/ryanatkn/react-mobx-typescript-experiments">the GitHub project</a> for
+          source code and a discussion on the project's motivation and findings.
         </p>
       </div>
     );
