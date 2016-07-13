@@ -8,19 +8,16 @@
     "react/react.d.ts": {
       "commit": "448b1ab712df827697d6e7a350bfb6737a00a463"
     },
+    "react/react-dom.d.ts": {
+      "commit": "448b1ab712df827697d6e7a350bfb6737a00a463"
+    },
     "react-router/react-router.d.ts": {
       "commit": "448b1ab712df827697d6e7a350bfb6737a00a463"
     },
     "react-router/history.d.ts": {
       "commit": "448b1ab712df827697d6e7a350bfb6737a00a463"
     },
-    "bluebird/bluebird.d.ts": {
-      "commit": "448b1ab712df827697d6e7a350bfb6737a00a463"
-    },
     "lodash/lodash.d.ts": {
-      "commit": "448b1ab712df827697d6e7a350bfb6737a00a463"
-    },
-    "react/react-dom.d.ts": {
       "commit": "448b1ab712df827697d6e7a350bfb6737a00a463"
     }
   }
