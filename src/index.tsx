@@ -26,11 +26,16 @@ const routes = createRoutes();
 /**
  * Mount the app.
  */
-ReactDOM.render(
-  <Provider {...stores}>
-    <Router history={history}>
-      {routes}
-    </Router>
-  </Provider>,
-  document.getElementById('app-wrapper')
-);
+const wrapper = document.getElementById('app-wrapper');
+if (wrapper) {
+  ReactDOM.render(
+    <Provider {...stores}>
+      <Router history={history}>
+        {routes}
+      </Router>
+    </Provider>,
+    wrapper
+  );
+} else {
+  throw new Error('Unable to find app wrapper element');
+}

@@ -42,12 +42,12 @@ export default class GranularRerendersPage extends React.Component<Props, {}> {
           so changing an item does not change a rendered collection, only the unrendered one.
         </p>
         <div className="form-group">
-          <ItemList items={store.items} ref={(c) => this.itemListInstance = c}
-            onToggle={store.toggleItem}
+          <ItemList items={store!.items} ref={(c) => this.itemListInstance = c}
+            onToggle={store!.toggleItem}
           />
         </div>
         <div className="form-group">
-          <button className="pure-button" onClick={store.addItem}>
+          <button className="pure-button" onClick={store!.addItem}>
             add item
           </button>
         </div>
@@ -62,9 +62,9 @@ export default class GranularRerendersPage extends React.Component<Props, {}> {
 
   doReset = (): void => {
     // First reset the item list's render count, and all of its items' render counts.
-    // It's easier to put this data on the component instances rather than the store.
+    // It's easier to put this data on the component instances rather than the store!.
     this.itemListInstance.resetRenderCount();
 
-    this.props.store.reset();
+    this.props.store!.reset();
   };
 }

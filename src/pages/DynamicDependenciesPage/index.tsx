@@ -43,7 +43,7 @@ export default class DynamicDependenciesPage extends React.Component<Props, {}> 
           </div>
           <div>
             {this.shouldReadCounter
-              ? <span><small>click count:</small> {store.counter}</span>
+              ? <span><small>click count:</small> {store!.counter}</span>
               : <em>[stopped reading counter]</em>
             }
           </div>
@@ -63,8 +63,8 @@ export default class DynamicDependenciesPage extends React.Component<Props, {}> 
   }
 
   doIncrement = (): void => {
-    this.props.store.increment();
-    if (this.props.store.counter > 5) {
+    this.props.store!.increment();
+    if (this.props.store!.counter > 5) {
       this.shouldReadCounter = true;
       this.forceUpdate();
     }
@@ -73,7 +73,7 @@ export default class DynamicDependenciesPage extends React.Component<Props, {}> 
   doReset = (): void => {
     this.renderCount = -1;
     this.shouldReadCounter = true;
-    this.props.store.reset();
+    this.props.store!.reset();
     this.forceUpdate();
   }
 }

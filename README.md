@@ -38,6 +38,11 @@ This is similar to the strategy used by Vue.
   the [Batched Mutations example](https://ryanatkn.github.io/react-mobx-typescript-experiments/#/batched-mutations).
   Some of these examples make mutations outside of actions for demonstration purposes,
   so `useStrict` is set to false.
+- After enabling the TypeScript 2.0 compiler flag `strictNullChecks`,
+  I had to add the postfix `!` operator whenever components access the MobX stores,
+  because all MobX `InjectedStores` interfaces mark the selected stores as optional
+  to allow the components to be instantiated by parent components.
+  This is a significant annoyance that I'll try to find a better solution for.
 
 ## Develop
 

@@ -27,11 +27,11 @@ export default class TodosPage extends React.Component<Props, {}> {
           and defining second-order computed properties.
         </p>
         <div>
-          {store.completedCount}/{store.todos.length} complete
+          {store!.completedCount}/{store!.todos.length} complete
         </div>
-        <TodoViewControls todosStore={store}/>
-        <NewTodo todosStore={store}/>
-        {store.visibleTodos.map((todo: TodoModel): JSX.Element => {
+        <TodoViewControls todosStore={store!}/>
+        <NewTodo todosStore={store!}/>
+        {store!.visibleTodos.map((todo: TodoModel): JSX.Element => {
           return <Todo key={todo.id} todo={todo} onRemove={this.doRemoveTodo}/>;
         })}
       </div>
@@ -39,6 +39,6 @@ export default class TodosPage extends React.Component<Props, {}> {
   }
 
   doRemoveTodo = (todo: TodoModel): void => {
-    this.props.store.removeTodo(todo);
+    this.props.store!.removeTodo(todo);
   };
 }

@@ -41,30 +41,30 @@ export default class BatchedMutationsPage extends React.Component<Props, {}> {
           computed properties used in a React component and reactions/autorun,
           will run only a single time when the upstream data changes are wrapped in an action.
         </p>
-        <div><small>counter:</small> {store.counter}</div>
-        <div><small>counter squared:</small> {store.counterSquared}</div>
+        <div><small>counter:</small> {store!.counter}</div>
+        <div><small>counter squared:</small> {store!.counterSquared}</div>
         <div>
           <small>counter squared compute count:</small>{' '}
-          {store.counterSquaredComputeCount}
+          {store!.counterSquaredComputeCount}
         </div>
         <div>
           <small>counter reaction count:</small>{' '}
-          {store.counterReactionCount}
+          {store!.counterReactionCount}
         </div>
         <div>
           <small>counter autorun count:</small>{' '}
-          {store.counterAutorunCount}
+          {store!.counterAutorunCount}
         </div>
         <div className="form-group btns-vertical">
-          <button className="pure-button" onClick={store.incrementWithAction}>
+          <button className="pure-button" onClick={store!.incrementWithAction}>
             increment and decrement many times in an action
           </button>
-          <button className="pure-button" onClick={store.increment}>
+          <button className="pure-button" onClick={store!.increment}>
             increment and decrement many times without an action
           </button>
         </div>
         <div className="form-group">
-          <button className="pure-button" onClick={store.reset}>
+          <button className="pure-button" onClick={store!.reset}>
             reset
           </button>
         </div>

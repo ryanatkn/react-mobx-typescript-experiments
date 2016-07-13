@@ -21,9 +21,9 @@ export default class BasicUsagePage extends React.Component<Props, {}> {
           that their render funtions implicitly depend on.
           No explicit subscriptions are needed to achieve granular re-renders.
         </p>
-        <div>{store.counter}</div>
+        <div>{store!.counter}</div>
         <div>
-          <button className="pure-button" onClick={store.increment}>
+          <button className="pure-button" onClick={store!.increment}>
             increment
           </button>
         </div>

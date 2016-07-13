@@ -14,7 +14,7 @@ interface Props extends SelectedStores {}
 @observer
 export default class EfficientNestedRerendersPage extends React.Component<Props, {}> {
   render(): JSX.Element {
-    const {store: {counter, increment, reset}} = this.props;
+    const {store} = this.props;
     return (
       <div className="page">
         <p>
@@ -30,19 +30,19 @@ export default class EfficientNestedRerendersPage extends React.Component<Props,
           a single time on a change even though their props and observed store state both change.
         </p>
         <div className="form-group">
-          <CounterDisplay counter={counter} renderCountIndex={0}>
-            <CounterDisplay counter={counter} renderCountIndex={1}>
-              <CounterDisplay counter={counter} renderCountIndex={2}/>
+          <CounterDisplay counter={store!.counter} renderCountIndex={0}>
+            <CounterDisplay counter={store!.counter} renderCountIndex={1}>
+              <CounterDisplay counter={store!.counter} renderCountIndex={2}/>
             </CounterDisplay>
           </CounterDisplay>
         </div>
         <div className="form-group">
-          <button className="pure-button" onClick={increment}>
+          <button className="pure-button" onClick={store!.increment}>
             increment
           </button>
         </div>
         <div className="form-group">
-          <button className="pure-button" onClick={reset}>
+          <button className="pure-button" onClick={store!.reset}>
             reset
           </button>
         </div>

@@ -24,14 +24,14 @@ export default class CounterDisplay extends React.Component<Props, {}> {
 
     // This is a hack to demonstrate some MobX behavior.
     // In normal code render functions should be kept free of side-effects.
-    store.renderCounts[renderCountIndex]++;
+    store!.renderCounts[renderCountIndex]++;
 
     return (
       <div style={{border: '1px solid #ddd', padding: '5px', marginTop: '5px'}}>
         <div>counter from props: {counter}</div>
-        <div>counter from injected store: {store.counter}</div>
+        <div>counter from injected store: {store!.counter}</div>
         <div>
-          <small>{store.renderCounts[renderCountIndex]} rerenders</small>
+          <small>{store!.renderCounts[renderCountIndex]} rerenders</small>
         </div>
         {this.props.children}
       </div>
