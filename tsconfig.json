@@ -9,6 +9,7 @@
     "preserveConstEnums": true,
     "experimentalDecorators": true,
     "strictNullChecks": true,
+    "skipLibCheck": true,
     "jsx": "react"
   },
   "exclude": [
