@@ -20,7 +20,7 @@ It's a bit magical, which, depending on your perspective, may be good or bad or 
 This is similar to the strategy used by Vue.
 
 ## Findings
-- I like MobX.
+- I like MobX, but for most nontrivial projects I will prefer Redux for the benefits of its immutability.
 - There's less boilerplate than with Redux.
 - Writing mutating operations is easier and less error-prone than transforming immutable data,
   and it's fully type safe, unlike Immutable.js and react-addons-update.
