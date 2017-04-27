@@ -4,7 +4,7 @@ Concept demos using MobX with React and TypeScript.
 
 [https://ryanatkn.github.io/react-mobx-typescript-experiments](https://ryanatkn.github.io/react-mobx-typescript-experiments)
 
-If you have an suggestions or questions, please open an issue!
+If you have any suggestions or questions, please open an issue!
 
 ## Motivation
 After having used the excellent Redux library extensively with React,
@@ -21,8 +21,11 @@ This is similar to the strategy used by Vue.
 
 ## Findings
 - I like MobX, and I will likely reach for it again for small projects and prototyping.
-  For most nontrivial projects I will prefer Redux for the benefits of its immutability.
-- There's less boilerplate than with Redux.
+  For most nontrivial projects I will prefer Redux for the benefits of its immutability
+  and declarative serializable replayable action stream, the latter of which is possible in MobX
+  but not without losing some of its perceived benefits of conciseness.
+- There's less boilerplate than with Redux. This is largely due to not having the declarative action stream
+  that Redux has by default, which is a major tradeoff.
 - Writing mutating operations is easier and less error-prone than transforming immutable data,
   and it's fully type safe, unlike Immutable.js and react-addons-update.
 - Composing computed properties feels natural and keeps everything nicely co-located.
