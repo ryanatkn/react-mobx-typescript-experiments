@@ -23,7 +23,7 @@ This is similar to the strategy used by Vue.
 - I like MobX, and I will likely reach for it again for small projects and prototyping.
   For most nontrivial projects I will prefer Redux for the benefits of its immutability
   and declarative serializable replayable action stream, the latter of which is possible in MobX
-  but not without losing some of its perceived benefits of conciseness.
+  but not without tradeoffs.
 - There's less boilerplate than with Redux. This is largely due to not having the declarative action stream
   that Redux has by default, which is a major tradeoff.
 - Writing mutating operations is easier and less error-prone than transforming immutable data,
