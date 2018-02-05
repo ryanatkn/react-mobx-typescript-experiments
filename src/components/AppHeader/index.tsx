@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { observer } from 'mobx-react';
 import Link from '../Link';
-import { ExperimentName, experimentNames } from '../../types';
+import { experimentNames } from '../../types';
 import AppHeaderLink from '../AppHeaderLink';
 
 import './style.css';
@@ -16,7 +16,7 @@ export const AppHeader = observer(({title}: Props) => (
       <h1>{title}</h1>
     </Link>
     <div className="app-header-nav">
-      {experimentNames.map((name: ExperimentName) => (
+      {experimentNames.map((name) => (
         <AppHeaderLink key={name} experimentName={name} />
       ))}
     </div>
