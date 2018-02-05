@@ -1,6 +1,6 @@
 {
   "name": "react-mobx-typescript-experiments",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "experiments with MobX in a React application written with TypeScript",
   "main": "index.js",
   "scripts": {
