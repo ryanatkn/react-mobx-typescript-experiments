@@ -1,5 +1,5 @@
 import * as React from 'react';
-import AppHeader from '../components/AppHeader';
+import {AppHeader} from '../components/AppHeader';
 
 interface Props {
   children: React.ReactNode;
@@ -10,7 +10,7 @@ export default class App extends React.Component<Props, {}> {
     const {children} = this.props;
     return (
       <div>
-        <AppHeader/>
+        <AppHeader title="React MobX TypeScript Experiments"/>
         {children}
       </div>
     );
