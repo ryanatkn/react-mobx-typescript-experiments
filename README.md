@@ -57,4 +57,5 @@ This is similar to the strategy used by Vue.
     # browse to http://localhost:8080
 
 ## License
-MIT
+
+public domain ([The Unlicense](license))
