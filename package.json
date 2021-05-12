@@ -2,7 +2,13 @@
   "name": "react-mobx-typescript-experiments",
   "version": "0.1.9",
   "description": "experiments with MobX in a React application written with TypeScript",
-  "main": "index.js",
+  "homepage": "https://ryanatkn.github.io/react-mobx-typescript-experiments",
+  "license": "Unlicense",
+  "author": {
+    "name": "Ryan Atkinson",
+    "email": "mail@ryanatkn.com",
+    "url": "https://www.ryanatkn.com"
+  },
   "scripts": {
     "start": "webpack-dev-server --progress --colors --inline",
     "typecheck": "tsc --noEmit",
@@ -16,9 +22,6 @@
     "type": "git",
     "url": "git+ssh://git@github.org/ryanatkn/react-mobx-typescript-experiments.git"
   },
-  "author": "Ryan Atkinson <ryanatkn@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://github.org/ryanatkn/react-mobx-typescript-experiments#readme",
   "dependencies": {
     "lodash": "^4.6.1",
     "mobx": "^3.4.1",
